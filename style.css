@@ -1,0 +1,235 @@
+body{
+    font-family: 'Piazzolla', serif;
+    color : black;
+    text-align: center;
+    padding : 0px;
+    margin : 0px;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom : 50px;
+    min-height: 100vh;  
+}
+
+
+#help{
+    position: absolute;
+    text-align : right;
+    font-size: 23px;
+    right : 10px;
+    top : 10px;
+    color : white;
+    transition: all 0.7s ease;
+}
+#help_img{
+    display: none;
+    position: absolute;
+    right : 30px;
+    top : 30px;
+    /* height: 157px;
+    width : 257px; */
+    border-radius: 10px;
+    transition: all 1s ease;
+    z-index: 1;
+}
+#help:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    
+}
+#help:hover + #help_img{
+    display: inline;  
+
+}
+
+h1{
+    padding : 20px;
+    background: #2193b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color : white;
+    width : 100%;
+}
+
+#cur_location{
+    padding : 10px;
+    font-size: 25px;
+    border : 1px solid white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#cur_location:hover{
+    font-size : 30px;
+    cursor: pointer;
+    background : #ddd;
+}
+#cur_location:hover + #cur_location_hover{
+    display: inline;
+}
+
+
+#cur_location_hover{
+    display: none;
+    position : absolute;
+    background-color: white;
+    z-index: 1;
+}
+
+  
+li {
+    text-align: center;
+    margin: 0 30px;
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 5px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 16px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+  }
+  
+li:hover {
+    cursor : pointer;
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+  }
+
+#more_result{
+    background: rgb(155, 146, 146) ;
+    font-weight: bold;
+}
+#no_match{
+    background: tomato;
+}
+#search_input{
+    margin : 15px;
+    margin-right: 20px;
+    padding : 5px 10px;
+    border : none;
+    background : #17778f;
+    color : white;
+    border-radius:10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+#search_input:focus{
+    background :#47abc2 ;
+    padding: 7px 13px;
+}
+
+::placeholder{
+    color : white;
+    opacity: 0.8;
+}
+
+
+button{
+    width : 90px;
+    height : 40px;
+    border-radius: 20px;
+}
+
+.info{
+    width : 70%; 
+    margin : 30px auto;
+    color :white;
+    position : relative;
+    padding : 50px 0;
+}
+#location{
+    padding-top : 20px;
+}
+.air_quality{
+    text-align: center;
+    margin-top : 60px;
+    margin-right: 0;
+    margin-left: 0;
+
+}
+
+#quality{
+    font-size: 45px;
+}
+
+.top{
+    display: inline-block;
+}
+#main{
+    display: inline-flex;
+}
+
+#aqi{
+    font-size: 50px; 
+    color : black; 
+}
+.aqi_div{
+    text-align: center;
+    padding: 5px;
+    margin : 0 40px auto;   
+}
+
+#more{
+    border : 2px solid black;
+    background : white;
+    bottom : -60px;
+    text-align: left;
+    color : black;
+}
+
+td{
+    padding : 4px;
+    border : 1px solid black;
+}
+
+tr:hover {
+    background: yellow;
+}
+
+#more_button{
+    position: inherit;
+    background-color : rgb(114, 96, 96);
+    box-shadow: none;
+    border : none;
+    width : 100%;
+    bottom : -60px;
+    left : 0;
+    overflow: hidden;
+}
+
+h2{
+    padding : 10px;
+}
+
+p{
+    font-size: 20px;
+}
+#time{
+    font-weight: bold;
+}
+
+#map {
+    width : 60%;
+    height : 400px;
+    margin : auto;
+    border : 1px solid black;
+}
+
+/* footer */
+#linkedin{
+    width : 25px;
+    height : 25px;  
+    border : 1px solid black; 
+}
+
+footer{
+    position : absolute;
+    bottom: 0px;
+    width : 100%;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: end;
+    background: #2193b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
