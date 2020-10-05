@@ -24,9 +24,8 @@ body{
     display: none;
     position: absolute;
     right : 30px;
-    top : 30px;
-    height: 157px;
-    width : 300px;
+    top : 30px; 
+    width : 75%;
     border-radius: 10px;
     transition: all 1s ease;
     z-index: 1;
