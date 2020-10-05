@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="https://www.clipartkey.com/mpngs/m/263-2639228_ames-high-school-little-cyclones-tornado-cyclone-logo.png">
     <script src="https://kit.fontawesome.com/9f3cf3236d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -34,7 +35,7 @@
         <div class="info" id="info">
             
             <i class="fas fa-info-circle " id="help"></i>
-            <img src="https://blogs.ei.columbia.edu/wp-content/uploads/2018/06/air-quality-alerts.png" alt="Air Quality Info." id="help_img">
+            <img src="Images/air-quality.png" alt="Air Quality Info." id="help_img">
 
         <div class="top">
 
@@ -60,7 +61,7 @@
 
                     <p>Measured at : <span id="time"></span></p>
 
-                    <table>
+                    <table id="table">
                         <tr>
                             <td>Main Pollutant</td>
                             <td id="pollutant"></td>
@@ -121,22 +122,26 @@
     </footer>
 
 
-    
-<link  rel="stylesheet"  href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"  />  
-<script  src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>  
+ 
+    <script  src="https://maps.googleapis.com/maps/api/js"></script>  
   
-<script>  
-      var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';  
-      var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';  
-      var  osmLayer  =  L.tileLayer(OSM_URL,  {attribution:  OSM_ATTRIB});  
-  
-      var  WAQI_URL    =  "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=59d72f97ba078dc7417f199d642eb0ae4ef65ad7";  
-      var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';  
-      var  waqiLayer  =  L.tileLayer(WAQI_URL,  {attribution:  WAQI_ATTR});  
-  
-      var  map  =  L.map('map').setView([28.7041,  77.1025],  6);  
-      map.addLayer(osmLayer).addLayer(waqiLayer);  
-</script>
+    <script>  
+          var  map  =  new  google.maps.Map(document.getElementById('map'),  {  
+                      center:  new  google.maps.LatLng(28.7041,  77.1025),  
+                      mapTypeId:  google.maps.MapTypeId.ROADMAP,  
+                      zoom:  5 
+                  });  
+      
+                                  var  t  =  new  Date().getTime();  
+          var  waqiMapOverlay  =  new  google.maps.ImageMapType({  
+                      getTileUrl:  function(coord,  zoom)  {  
+                                return  'https://tiles.aqicn.org/tiles/usepa-aqi/'  +  zoom  +  "/"  +  coord.x  +  "/"  +  coord.y  +  ".png?token=_TOKEN_ID_";  
+                      },  
+                      name:  "Air  Quality",  
+            });  
+      
+          map.overlayMapTypes.insertAt(0,waqiMapOverlay);  
+    </script>
 
     <script src="./script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
