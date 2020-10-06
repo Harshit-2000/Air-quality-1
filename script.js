@@ -73,16 +73,16 @@ async function cur_data(city_name){
     aqi.innerHTML = data.data.aqi;
     location_name.innerHTML = data.data.city.name;
     pollutant.innerHTML = data.data.dominentpol;
-    co.innerHTML = iaqi.co.v;
-    rh.innerHTML = iaqi.h.v + " %";
-    no2.innerHTML = iaqi.no2.v;
-    o3.innerHTML = iaqi.o3.v;
-    atm.innerHTML = iaqi.p.v + " mb";
+    co.innerHTML = iaqi.co.v.toFixed(2);
+    rh.innerHTML = iaqi.h.v.toFixed(2) + " %";
+    no2.innerHTML = iaqi.no2.v.toFixed(2);
+    o3.innerHTML = iaqi.o3.v.toFixed(2);
+    atm.innerHTML = iaqi.p.v.toFixed(2) + " mb";
     pm10.innerHTML = iaqi.pm10.v;
     pm25.innerHTML = iaqi.pm25.v;
-    so2.innerHTML = iaqi.so2.v;
-    wind.innerHTML = iaqi.w.v + " m/s";
-    temp.innerHTML = iaqi.t.v + " °C";
+    so2.innerHTML = iaqi.so2.v.toFixed(2);
+    wind.innerHTML = iaqi.w.v.toFixed(2) + " m/s";
+    temp.innerHTML = iaqi.t.v.toFixed(2) + " °C";
     time.innerHTML = data.data.time.s;
 
     }
